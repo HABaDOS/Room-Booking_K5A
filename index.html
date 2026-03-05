@@ -6,12 +6,31 @@
 
 <body>
 
+<div id="content" style="display:none;">
+
 <h1>Room Booking K5A</h1>
 <p>Romoversikt kommer her.</p>
 
-<button onclick="alert('Booking kommer senere')">
-Book rom
-</button>
+</div>
+
+<script>
+
+if(localStorage.getItem("access") === "yes"){
+  document.getElementById("content").style.display = "block";
+}
+else{
+  let kode = prompt("Skriv tilgangskode");
+
+  if(kode === "K5A"){
+    localStorage.setItem("access","yes");
+    document.getElementById("content").style.display = "block";
+  }
+  else{
+    document.body.innerHTML = "Ingen tilgang";
+  }
+}
+
+</script>
 
 </body>
 </html>
