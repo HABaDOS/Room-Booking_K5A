@@ -1,0 +1,7 @@
+Viktig at PowreAutomate er lik epost etterspørelen
+NAVN:
+ROM:
+FRA:
+TIL:
+TYPE:
+REPETER:
