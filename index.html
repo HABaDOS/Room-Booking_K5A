@@ -12,59 +12,92 @@
 
 <div id="content" style="display:none;">
 
-<h1>Room Booking K5A</h1>
+  <div class="header">Header</div>
 
-<div style="display:flex;">
+  <div class="top-links">Hyper links (parkert)</div>
 
-  <!-- VENSTRE -->
-  <div style="width:200px; padding:10px; border-right:1px solid #ccc;">
-    <h3>Rom</h3>
+  <div class="main">
 
-    <button onclick="velgRom('Oslo 1')">Oslo 1</button><br><br>
-    <button onclick="velgRom('Oslo 2')">Oslo 2</button><br><br>
-    <button onclick="velgRom('Oslo 3')">Oslo 2</button><br><br>
-    <button onclick="velgRom('Oslo 4')">Oslo 2</button><br><br>
-    <button onclick="velgRom('Styret')">Styret</button>
-  </div>
-
-  <!-- HØYRE -->
-  <div style="flex:1; padding:10px;">
-
-    <h2>Romoversikt</h2>
-
-    <div class="room">
-      <h3>Oslo 1</h3>
-      <p>Status: Ledig</p>
-      <a href="mailto:booking@firma.no?subject=Rombooking Oslo 1&body=NAVN:%0D%0AROM: Oslo 1%0D%0AFRA:%0D%0ATIL:%0D%0ATYPE:%0D%0AREPETER:">
-        <button>Book rom</button>
-      </a>
+    <!-- VENSTRE -->
+    <div class="sidebar">
+      <h3>Rom</h3>
+      <button onclick="velgRom('Oslo 1')">Oslo 1</button>
+      <button onclick="velgRom('Oslo 2')">Oslo 2</button>
+      <button onclick="velgRom('Oslo 3')">Oslo 3</button>
+      <button onclick="velgRom('Oslo 4')">Oslo 4</button>
+      <button onclick="velgRom('Styret')">Styret</button>
     </div>
 
-    <div class="room">
-      <h3>Oslo 2</h3>
-      <p>Status: Ledig</p>
-      <a href="mailto:booking@firma.no?subject=Rombooking Oslo 2&body=NAVN:%0D%0AROM: Oslo 2%0D%0AFRA:%0D%0ATIL:%0D%0ATYPE:%0D%0AREPETER:">
-        <button>Book rom</button>
-      </a>
+    <!-- HØYRE -->
+    <div class="content-area">
+
+      <div class="calendar-actions">
+        Funksjonsknapper for kalender
+      </div>
+
+      <div id="calendar"></div>
+
     </div>
-
-    <div class="room">
-      <h3>Styret</h3>
-      <p>Status: Ledig</p>
-      <a href="mailto:booking@firma.no?subject=Rombooking Styret&body=NAVN:%0D%0AROM: Styret%0D%0AFRA:%0D%0ATIL:%0D%0ATYPE:%0D%0AREPETER:">
-        <button>Book rom</button>
-      </a>
-    </div>
-
-    <hr>
-
-    <div id="calendar"></div>
 
   </div>
 
 </div>
 
-</div>
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  background: #2a8fb0;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.top-links {
+  background: #1f5d75;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 100px);
+}
+
+.sidebar {
+  width: 200px;
+  background: #4fa52b;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-area {
+  flex: 1;
+  padding: 10px;
+  background: #e76f2e;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-actions {
+  background: #e76f2e;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#calendar {
+  background: white;
+  flex: 1;
+}
+
+</style>
 
 <script>
 
