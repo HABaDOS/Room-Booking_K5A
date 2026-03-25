@@ -5,3 +5,7 @@ FRA:
 TIL:
 TYPE:
 REPETER:
+
+
+Rommee skal på prgramspøk hete "rom_K5A_1.1" hvor 1.1 er Etasje. rom telt fra nord. Det vil si at 1.1 er ved stikkerene. 2.1 er ved ledelsen. 2.3 er storerommet oppe
+
