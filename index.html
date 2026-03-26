@@ -225,7 +225,7 @@ body {
 
 <script>
 <!-- kalender -->
-let currentRoom = "Rom_K5A_1.1";
+let currentRoom = "ALL";
 let calendar;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -253,7 +253,13 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(res => res.json())
           .then(data => {
 
-            let filtrert = data;
+    let filtrert;
+
+if(currentRoom === "ALL"){
+  filtrert = data;
+} else {
+  filtrert = data.filter(e => e.room === currentRoom);
+}
             let medFarger = filtrert.map(e => {
 
   if(e.room === "Rom_K5A_1.1") e.color = "#4a6fa5";
