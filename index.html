@@ -202,12 +202,8 @@ body {
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-      <h3>Rom</h3>
-      
-      <a href="mailto:booking@firma.no?subject=Rombooking Rom_K5A_1.1&body=MØTE_NAVN:%0D%0AROM: Rom_K5A_1.1%0D%0AFRA:%0D%0ATIL:%0D%0ATYPE:%0D%0AREPETER:">
-       <button class="active">Rom_K5A_1.1</button>
-        </a>
-      
+      <h3>Overikt Rom</h3>'
+      <button class="active">Rom_K5A_1.1</button>
       <button>Rom_K5A_1.2</button>
       <button>Rom_K5A_2.1</button>
       <button>Rom_K5A_2.2</button>
@@ -240,6 +236,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('calendar'),
     {
       initialView: 'timeGridWeek',
+      
+      eventContent: function(arg) {
+          return {
+            html: "<b>" + arg.event.title + "</b><br>" + arg.event.extendedProps.room
+          };
+      },
+      
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
