@@ -255,8 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .then(res => res.json())
           .then(data => {
 
-            let filtrert = data.filter(e => e.room === currentRoom);
-
+            let filtrert = data;
             let medFarger = filtrert.map(e => {
 
   if(e.room === "Rom_K5A_1.1") e.color = "#4a6fa5";
