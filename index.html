@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar = new FullCalendar.Calendar(
     document.getElementById('calendar'),
     {
-      initialView: 'dayGridMonth',
+      initialView: 'timeGridWeek',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
@@ -254,7 +254,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let filtrert = data.filter(e => e.room === currentRoom);
 
-            successCallback(filtrert);
+            let medFarger = filtrert.map(e => {
+
+  if(e.room === "Rom_K5A_1.1") e.color = "#4a6fa5";
+  if(e.room === "Rom_K5A_1.2") e.color = "#6c9bcf";
+  if(e.room === "Rom_K5A_2.1") e.color = "#8bb174";
+  if(e.room === "Rom_K5A_2.2") e.color = "#f4a261";
+  if(e.room === "Rom_K5A_2.3") e.color = "#e76f51";
+
+  return e;
+});
+
+successCallback(medFarger);
 
           });
 
