@@ -66,6 +66,99 @@ body {
   border: none;
   cursor: pointer;
 }
+  body {
+  margin: 0;
+  font-family: Arial;
+  background: #eef1f5;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 30px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(to right, #5f7ea6, #7ea3cc);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* NAV */
+.nav {
+  background: #f1f3f6;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav span {
+  cursor: pointer;
+  color: #555;
+}
+
+.nav .active {
+  border-bottom: 2px solid #5f7ea6;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #f7f8fa;
+  padding: 15px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background: #e3e6ea;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar button.active {
+  background: #5f7ea6;
+  color: white;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
+}
+
+/* TOOLBAR */
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.toolbar button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  background: #5f7ea6;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* CALENDAR */
+#calendar {
+  background: white;
+}
   
 </style>
   
@@ -74,29 +167,37 @@ body {
 
 <body>
 
-<div id="content" style="display:none;">
+<div class="app">
 
-  <div class="header">Header</div>
+  <div class="header">
+    Room Booking K5A
+  </div>
 
-  <div class="top-links">Hyper links (parkert)</div>
+  <div class="nav">
+    <span class="active">Dashboard</span>
+    <span>Reports</span>
+    <span>Settings</span>
+  </div>
 
   <div class="main">
 
-    <!-- VENSTRE -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
       <h3>Rom</h3>
-      <button onclick="velgRom('Oslo 1')">Oslo 1</button>
-      <button onclick="velgRom('Oslo 2')">Oslo 2</button>
-      <button onclick="velgRom('Oslo 3')">Oslo 3</button>
-      <button onclick="velgRom('Oslo 4')">Oslo 4</button>
-      <button onclick="velgRom('Styret')">Styret</button>
+      <button class="active">Oslo 1</button>
+      <button>Oslo 2</button>
+      <button>Oslo 3</button>
+      <button>Oslo 4</button>
+      <button>Styret</button>
     </div>
 
-    <!-- HØYRE -->
-    <div class="content-area">
+    <!-- CONTENT -->
+    <div class="content">
 
-      <div class="calendar-actions">
-        Funksjonsknapper for kalender
+      <div class="toolbar">
+        <button>Today</button>
+        <button><</button>
+        <button>></button>
       </div>
 
       <div id="calendar"></div>
